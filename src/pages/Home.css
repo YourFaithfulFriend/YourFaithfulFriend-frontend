@@ -1,0 +1,21 @@
+.Home {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10vh;
+}
+
+main {
+  width: 50%;
+}
+
+.nudge {
+  margin-top: 20px;
+  display: inline-block;
+  background-color: #92b4a7;
+  color: unset;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+}
