@@ -36,6 +36,15 @@ export default function Chat({ user }) {
   }, [user.sub]);
 
   const handleSend = () => {
+    if (message.length < 0) return;
+    let copyConversation = {...activeConversation};
+    copyConversation.messages.push({
+      role: "user",
+      content: message
+    });
+    setActiveConversation(copyConversation);
+
+
     if (activeConversation.id) {
       fetch(
         `${process.env.REACT_APP_API_URL}/api/message?conversation=${activeConversation.id}&message=${message}`,
