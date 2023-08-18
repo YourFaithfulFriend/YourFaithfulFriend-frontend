@@ -65,7 +65,7 @@ export default function WelcomePage() {
             allowFullScreen
             className="mx-20 mt-5 mb-20 rounded-lg border-4 border-[#2464EA]"
             height="480"
-            src="https://www.youtube.com/watch?v=mv-4JTXFNlQ"
+            src="https://www.youtube.com/embed/mv-4JTXFNlQ"
             title="YouTube Demo"
             width="853"
           />
