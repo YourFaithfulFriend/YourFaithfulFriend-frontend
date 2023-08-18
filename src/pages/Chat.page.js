@@ -36,14 +36,15 @@ export default function Chat({ user }) {
   }, [user.sub]);
 
   const handleSend = () => {
-    if (message.length < 0) return;
-    
+    if (message.length <= 0) return;
+
     let copyConversation = {...activeConversation};
     copyConversation.messages.push({
       role: "user",
       content: message
     });
     setActiveConversation(copyConversation);
+    setMessage("");
 
 
     if (activeConversation.id) {
@@ -55,8 +56,6 @@ export default function Chat({ user }) {
       ).then((response) => {
         if (response.status === 200) {
           response.json().then((newConversation) => {
-            console.log("response length", newConversation.messages.length);
-            setMessage("");
             setActiveConversation(newConversation);
             const existingIndex = conversations.findIndex(
               (conversation) => conversation.id === newConversation.id
