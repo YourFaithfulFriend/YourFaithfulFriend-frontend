@@ -37,6 +37,7 @@ export default function Chat({ user }) {
 
   const handleSend = () => {
     if (message.length < 0) return;
+    
     let copyConversation = {...activeConversation};
     copyConversation.messages.push({
       role: "user",
